@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @pro_sante.nom %>
+</p>
+
+<p>
+  <strong>Prenom:</strong>
+  <%= @pro_sante.prenom %>
+</p>
+
+
+<% if @pro_sante.adresse.present? %>
+  <strong>Adresse:</strong>
+  <p>Nom: <%= @pro_sante.adresse.name %></p>
+  <p>Latitude: <%= @pro_sante.adresse.latitude %></p>
+  <p>Longitude: <%= @pro_sante.adresse.longitude %></p>
+<% end %>
+
+<p>
+  <strong>Specialte:</strong>
+  <%= @pro_sante.specialte %>
+</p>
+
+<%= link_to 'Edit', edit_pro_sante_path(@pro_sante) %> |
+<%= link_to 'Back', pro_santes_path %>

@@ -1,0 +1,32 @@
+<h1>Listing pro_santes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Adresse</th>
+      <th>Specialte</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pro_santes.each do |pro_sante| %>
+      <tr>
+        <td><%= pro_sante.nom %></td>
+        <td><%= pro_sante.prenom %></td>
+        <td><%= pro_sante.adresse.name %></td>
+        <%= gmaps4rails(@json) %>
+        <td><%= pro_sante.specialte %></td>
+        <td><%= link_to 'Show', pro_sante %></td>
+        <td><%= link_to 'Edit', edit_pro_sante_path(pro_sante) %></td>
+        <td><%= link_to 'Destroy', pro_sante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pro sante', new_pro_sante_path %>
